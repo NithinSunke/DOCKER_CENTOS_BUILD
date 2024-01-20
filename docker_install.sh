@@ -1,4 +1,4 @@
-cp /tmp/DOCKER_CENTOS_BUILD/docker.repo  /etc/yum.repos.d/docker.repo
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 sudo yum repolist
 sudo yum install docker-engine btrfs-progs btrfs-progs-devel -y
