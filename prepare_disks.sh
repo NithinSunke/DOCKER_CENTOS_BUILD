@@ -9,5 +9,5 @@ function prepare_disk {
 
 }
 
-prepare_disk /dev/sdb
-
+prepare_disk /dev/mapper/dockerfs
+partprobe

@@ -2,7 +2,7 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 
 sudo yum repolist
 sudo yum install docker-ce btrfs-progs btrfs-progs-devel -y
-sudo /tmp/DOCKER_CENTOS_BUILD/prepare_disk.sh 
+sudo sh /tmp/DOCKER_CENTOS_BUILD/prepare_disks.sh 
 sudo echo "alias docker=\"sudo /usr/bin/docker\"" >> /home/nsunke/.bash_profile
 docker ps
 mkfs.btrfs -f -L docker1 /dev/mapper/dockerfs1
@@ -13,5 +13,3 @@ echo "LABEL=docker1  /var/lib/docker btrfs defaults 0 0" >> /etc/fstab
 mount /var/lib/docker
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
-systemctl enable docker.service
-systemctl start docker.service
